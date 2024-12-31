@@ -1,14 +1,8 @@
 import os
 from fnmatch import fnmatch
 from typing import Any
-
 import tiktoken
-
-MAX_FILE_SIZE = 10 * 1024 * 1024  # 10 MB
-MAX_DIRECTORY_DEPTH = 20  # Maximum depth of directory traversal
-MAX_FILES = 10_000  # Maximum number of files to process
-MAX_TOTAL_SIZE_BYTES = 500 * 1024 * 1024  # 500 MB
-
+from gitingest_lite.constant import MAX_TOTAL_SIZE_BYTES, MAX_FILES
 
 def _should_include(path: str, base_path: str, include_patterns: list[str]) -> bool:
     rel_path = path.replace(base_path, "").lstrip(os.sep)

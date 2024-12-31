@@ -9,15 +9,11 @@ import sys
 from typing import Union
 
 # Import other modules from the package
+from gitingest_lite.encoding import setup_encoding
 from gitingest_lite.parse_query import parse_query
 from gitingest_lite.clone import clone_repo, CloneConfig
 from gitingest_lite.ingest_from_query import ingest_from_query
 
-def setup_encoding():
-    if sys.stdout.encoding != 'utf-8':
-        sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8', errors='replace')
-    if sys.stderr.encoding != 'utf-8':
-        sys.stderr = io.TextIOWrapper(sys.stderr.buffer, encoding='utf-8', errors='replace')
 
 def set_writable_permissions(path: Union[str, Path]) -> None:
     """

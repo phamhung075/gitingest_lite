@@ -1,6 +1,5 @@
 import sys
 import io
-import codecs
 
 def setup_encoding():
     if sys.stdout.encoding != 'utf-8':

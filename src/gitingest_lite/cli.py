@@ -1,19 +1,16 @@
 import os
 import pathlib
 import click
-import sys
 import re
-from urllib.parse import urlparse
 
-from gitingest_lite.ingest_from_query import MAX_FILE_SIZE
+from gitingest_lite.constant import MAX_FILE_SIZE
+
 from .encoding import setup_encoding
 
 # Setup encoding first
 setup_encoding()
 
 # Define constants
-DEFAULT_IGNORE_PATTERNS = []
-
 
 def sanitize_filename(name: str) -> str:
     """Sanitize a string to make it a valid filename."""
@@ -82,6 +79,8 @@ def main(
     include_pattern: tuple[str, ...],
 ) -> None:
     """Analyze a directory and create a text dump of its contents."""
+    version = "0.1.0"
+    print(f"Running gitingest_lite as a script...{version}")
     try:
         from gitingest_lite.ingest import ingest
 
