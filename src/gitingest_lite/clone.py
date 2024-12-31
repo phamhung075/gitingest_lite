@@ -59,6 +59,7 @@ async def clone_repo(config: CloneConfig) -> tuple[bytes, bytes]:
         raise ValueError("Repository not found, make sure it is public")
 
     try:
+        print(f"Cloning repository {url} to {local_path}")
         if commit:
             # Scenario 1: Clone and checkout a specific commit
             # Clone the repository without depth to ensure full history for checkout
