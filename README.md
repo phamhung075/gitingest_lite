@@ -1,51 +1,53 @@
-# 🚀 **GitIngest Lite**
+# 🚀 **GitIngest Lite for Windows 10 – Private Repository Tool**  
 
-**A lightweight version of [GitIngest](https://github.com/cyclotruc/gitingest) designed to run on the command line for private projects.**
-
----
-
-## 📖 **Overview**
-
-**GitIngest Lite** is a simplified command-line tool optimized for analyzing local directories and private repositories. It generates text digests optimized for easier integration with Large Language Models (LLMs).  
-
-### ✅ **Key Features:**
-- 📂 **Local Directory Analysis:** Process local project directories.  
-- 🔒 **Private Repository Support:** Designed for internal and private use cases.  
-- 🛠️ **Command-Line Interface:** Simple, lightweight, and efficient.  
-- 📊 **Project Overview:** Generates clear text summaries and statistics.  
-- ⚡ **Runs on Windows Command Line:** Optimized for seamless Windows 10 operation.
+**A lightweight command-line tool for analyzing private repositories on Windows 10.**  
 
 ---
 
-## 💻 **Usage**
+## 📖 **Overview**  
 
-### 📂 Analyze a Local Project
+**GitIngest Lite** is a streamlined version of the original [GitIngest](https://github.com/cyclotruc/gitingest) project, designed specifically for **Windows 10 environments** and **private repositories**. It simplifies the process of generating project digests optimized for integration with **Large Language Models (LLMs)**.  
+
+---
+
+## ✅ **Key Features:**  
+- 📂 **Local Directory Analysis:** Quickly analyze local project folders.  
+- 🔒 **Private Repository Support:** Optimized for internal/private usage.  
+- ⚡ **Windows 10 Support:** Seamlessly runs on Windows Command Prompt and PowerShell.  
+- 📊 **Clear Project Insights:** Generates easy-to-read text summaries and statistics.  
+- 🛠️ **Lightweight CLI Tool:** Fast and efficient with minimal dependencies.  
+
+---
+
+## 💻 **Usage**  
+
+### 📂 Analyze a Local Project  
 ```powershell
 gitingest_lite "C:\path\to\your\project"
 ```
 
-### 📝 Specify an Output File
+### 📝 Specify an Output File  
 ```powershell
 gitingest_lite "C:\path\to\your\project" -o "output.txt"
 ```
 
-### 📚 Show Help Options
+### 📚 Show Help Options  
 ```powershell
 gitingest_lite --help
 ```
 
 ---
 
-## 🛠️ **Origin Project**
+## 🛠️ **Origin Project**  
 
-This project is based on the original **[GitIngest](https://github.com/cyclotruc/gitingest)** by **Romain Courtois**.
+This project is a lightweight adaptation of **[GitIngest](https://github.com/cyclotruc/gitingest)** by **Romain Courtois**.  
 
 ---
 
-## 🔑 **License**
+## 🔑 **License**  
 
 **MIT License**  
-This project is free for personal and private use.
+This project is free for personal and private use.  
 
 ---
 
