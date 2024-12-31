@@ -77,7 +77,18 @@ def _read_file_content(file_path: str) -> str:
     except Exception as e:
         return f"Error reading file: {str(e)}"
 
-
+def _get_empty_dir_dict(path: str) -> dict[str, Any]:
+    return {
+        "name": os.path.basename(path),
+        "type": "directory",
+        "size": 0,
+        "children": [],
+        "file_count": 0,
+        "dir_count": 0,
+        "path": path,
+        "ignore_content": False,
+    }
+    
 def _scan_directory(
     path: str,
     query: dict[str, Any],
@@ -99,29 +110,11 @@ def _scan_directory(
     # Check if path exists and is a directory
     if not os.path.exists(path):
         print(f"Path does not exist: {path}")
-        return {
-            "name": os.path.basename(path),
-            "type": "directory",
-            "size": 0,
-            "children": [],
-            "file_count": 0,
-            "dir_count": 0,
-            "path": path,
-            "ignore_content": False,
-        }
+        return _get_empty_dir_dict(path)
         
     if not os.path.isdir(path):
         print(f"Path is not a directory: {path}")
-        return {
-            "name": os.path.basename(path),
-            "type": "directory",
-            "size": 0,
-            "children": [],
-            "file_count": 0,
-            "dir_count": 0,
-            "path": path,
-            "ignore_content": False,
-        }
+        return _get_empty_dir_dict(path)
 
     # Ensure we're not skipping the base path
     if path == base_path or path.startswith(base_path):
@@ -130,29 +123,11 @@ def _scan_directory(
     real_path = os.path.realpath(path)
     if real_path in seen_paths:
         print(f"Skipping already visited path: {path}")
-        return {
-            "name": os.path.basename(path),
-            "type": "directory",
-            "size": 0,
-            "children": [],
-            "file_count": 0,
-            "dir_count": 0,
-            "path": path,
-            "ignore_content": False,
-        }
+        return _get_empty_dir_dict(path)
 
     seen_paths.add(real_path)
 
-    result = {
-        "name": os.path.basename(path),
-        "type": "directory",
-        "size": 0,
-        "children": [],
-        "file_count": 0,
-        "dir_count": 0,
-        "path": path,
-        "ignore_content": False,
-    }
+    result = _get_empty_dir_dict(path)
 
     ignore_patterns = query["ignore_patterns"]
     include_patterns = query["include_patterns"]
