@@ -83,7 +83,7 @@ def main(
 ) -> None:
     """Analyze a directory and create a text dump of its contents."""
     try:
-        from gitingest.ingest import ingest
+        from gitingest_lite.ingest import ingest
 
         # Resolve the source path
         source = str(pathlib.Path(source).resolve())
