@@ -6,7 +6,7 @@ import uuid
 from typing import Any, Union
 from urllib.parse import urlparse, unquote
 
-from gitingest.ignore_patterns import DEFAULT_IGNORE_PATTERNS
+from gitingest_lite.ignore_patterns import DEFAULT_IGNORE_PATTERNS
 
 TMP_BASE_PATH: str = "../tmp"
 HEX_DIGITS = set(string.hexdigits)

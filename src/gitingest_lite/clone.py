@@ -1,7 +1,7 @@
 import asyncio
 from dataclasses import dataclass
 
-from gitingest.utils import AsyncTimeoutError, async_timeout
+from gitingest_lite.utils import AsyncTimeoutError, async_timeout
 
 CLONE_TIMEOUT: int = 20
 

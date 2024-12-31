@@ -5,7 +5,7 @@ import sys
 import re
 from urllib.parse import urlparse
 
-from gitingest.ingest_from_query import MAX_FILE_SIZE
+from gitingest_lite.ingest_from_query import MAX_FILE_SIZE
 from .encoding import setup_encoding
 
 # Setup encoding first

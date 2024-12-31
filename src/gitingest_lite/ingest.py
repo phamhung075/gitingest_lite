@@ -7,9 +7,9 @@ import sys
 from typing import Union
 
 # Import other modules from the package
-from gitingest.parse_query import parse_query
-from gitingest.clone import clone_repo, CloneConfig
-from gitingest.ingest_from_query import ingest_from_query
+from gitingest_lite.parse_query import parse_query
+from gitingest_lite.clone import clone_repo, CloneConfig
+from gitingest_lite.ingest_from_query import ingest_from_query
 
 def setup_encoding():
     if sys.stdout.encoding != 'utf-8':

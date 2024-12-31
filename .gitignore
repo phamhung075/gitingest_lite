@@ -175,3 +175,5 @@ Caddyfile
 tmp/*
 digest.txt
 gitingest_lite.egg-info
+export
+export/*
